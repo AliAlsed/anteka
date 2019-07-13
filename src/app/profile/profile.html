@@ -1,0 +1,50 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      الصفحه الشخصيه
+    </ion-title>
+    <ion-buttons id="notification-button" (click)="logout()" slot="end" style="padding :8px">
+      <ion-icon style="font-size: 24px !important;" name="exit">
+      </ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="user-photo" padding-top>
+    <div style="text-align: center">
+      <img [src]="user?.image" style="width: 200px; height: 200px;">
+    </div>
+  </div><br>
+
+  <ion-list style="border-radius: 5px">
+    <ion-item>
+      <ion-icon name="person" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>:الاسم</p>
+        <h2>{{user.name}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>:البريد الالكتروني</p>
+        <h2>{{user.email}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="compass" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>:العنوان</p>
+        <h2>{{user.address}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>:رقم الهاتف</p>
+        <h2>{{user.phone}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,14 @@
+
+// themes/variables.scss
+.tabs-md .tab-button {
+    color: #fffa65 !important;
+   }
+  
+   .tabs-md .tab-button[aria-selected=true] {
+     color: #fffa65 !important;
+   }
+   
+   .tabs-md .tab-button[aria-selected=false] {
+    color: #ffffff !important;
+  }
+  

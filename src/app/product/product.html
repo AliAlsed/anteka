@@ -1,0 +1,35 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      المنتجات
+    </ion-title>
+    <ion-buttons id="notification-button" slot="end" style="padding :8px">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card *ngFor="let item of list | async ">
+    <img class="imagedev" [src]="item.payload.val().image" style="width: 100% ; height: 250px;">
+    <ion-card-content style="direction: rtl">
+      <ion-card-title>
+        <h2 style="color: #3880ff">اسم المنتج: <span
+            style="color: black; font-weight: bold">{{item.payload.val().name}}</span>
+        </h2>
+      </ion-card-title>
+      <h2 style="color: #3880ff">التفاصيل: <span
+          style="color: black; font-weight: bold">{{item.payload.val().description}}</span></h2>
+      <h2 style="color: #3880ff">السعر: <span
+          style="color: black; font-weight: bold">{{item.payload.val().price}}$</span></h2>
+      <h2 style="color: #3880ff">حالة المنتج: <span
+          style="color: black; font-weight: bold">{{item.payload.val().status}}</span></h2>
+    </ion-card-content>
+    <div style="text-align: center; margin:10px">
+      <ion-button icon-start clear item-center (click)="buy(item.payload.val())">
+        <ion-icon name="cart"></ion-icon>
+        شراء
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

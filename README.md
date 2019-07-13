@@ -1,1 +1,1 @@
-anteka
+Anteka - ecommerce app

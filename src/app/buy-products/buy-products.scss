@@ -1,0 +1,213 @@
+::-webkit-input-placeholder { text-align:right; }
+::-webkit-select-placeholder { text-align:right; }
+
+/* mozilla solution */
+input:-moz-placeholder { text-align:right; }
+select:-moz-placeholder { text-align:right; }
+placeholder{
+  text-align: right
+}
+
+  ion-select{
+    width:100%;
+    max-width: 100% !important;
+    padding-left:5px;
+  }
+
+.input{
+  border: 1px solid #3880ff;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.select{
+  border: 1px solid #3880ff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  direction: rtl !important;
+}
+ .toolbar-background-md
+
+{
+background: #FF4136;
+}
+
+
+ .toolbar-title-md {
+    color: #FFF !important;
+    direction: rtl !important;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+ .toolbar-title-md p{
+margin: 0 5px;
+display: inline-block;
+}
+
+
+
+ .header-content .content {
+    width: 100%;
+    position: relative;
+    text-align: center;
+
+}
+
+
+ .logorreg {
+    display: flex;
+    align-items: center;
+    direction: rtl;
+}
+
+ .header-content .content .inputs button:first-child {
+    padding: 20px;
+    display: block;
+    border: 1px solid #3880ff !important;
+    color: #3880ff;
+    font-family: 'Cairo', sans-serif;
+    float: right;
+}
+
+
+
+ .header-content .content .inputs h2 {
+font-family: 'Cairo', sans-serif;
+margin-top: 20px;
+border-bottom: 1px dashed #3880ff;
+display: inline-block;
+color: #3880ff;
+padding-bottom: 8px;
+padding-right: 10px;
+padding-left: 10px;
+margin-bottom: 20px;
+}
+
+ .header-content .content .inputs input  {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    padding: 14px;
+    width: 100%;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding-right: 40px;
+}
+ .header-content .content .inputs textarea  {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    padding: 14px;
+    width: 100%;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding-right: 40px;
+}
+ textarea{
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    padding: 14px;
+    width: 100%;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding-right: 40px;
+    margin-bottom:10px;
+    position: relative;
+}
+
+ .email,  .pass,  .name {
+    margin-bottom:10px;
+    position: relative;
+}
+
+
+ .inputs i {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    color: #FF4136;
+}
+
+ .logorreg p {
+    width: 100%;
+    text-align: left;
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px;
+    margin: 0;
+    height: 100%;
+}
+
+
+.loginview {
+    display: none;
+}
+
+.dirion {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+}
+
+ .micon{
+    display: inline-block;
+    border: 1px dashed;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    font-size: 31px;
+    color: #3880ff;
+}
+
+
+
+ .content{
+padding: 16px;
+}
+
+
+  .myimage {
+    height: 250px;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3880ff;
+    width: 100%;
+    border: 1px dashed #CCC;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+ .imagedev {
+    margin-bottom: 10px;
+    border: 1px dashed #CCC;
+}
+
+  .myimage p {
+    margin: 0;
+}
+
+.alert-tappable {
+  text-align: right !important;
+}
+.item-select select {
+  max-width: 100%!important;
+  width: 100%!important;
+  right: auto!important;
+  direction: rtl !important;
+  padding-left: 0!important;
+  float: right;
+
+}
+ .create .createbut {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    direction: rtl;
+    width: 30px;
+}

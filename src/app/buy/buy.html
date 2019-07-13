@@ -1,0 +1,72 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      بيع مواد
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="card-background-page">
+
+  <h2 style="font-size: 24px; text-align: center">
+    الاقسام</h2>
+  <div style="margin-top:35px;">
+    <!-- (click)="buy('clothes')"  -->
+    <ion-card routerLink="/buy-products/clothes">
+      <ion-slides loop="true" autoplay="3100" pager>
+        <ion-slide
+          *ngFor="let number of ['https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F101.jpg?alt=media&token=d553e461-ec06-46df-92e9-ef5448608161','https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F102.jpg?alt=media&token=b55851f1-7556-461b-a097-6adb2ee10488']">
+          <img style="height: auto; width: 100%" src="{{number}}" />
+        </ion-slide>
+      </ion-slides>
+      <h4 style="text-align: center; color:#3880ff">ملابس#</h4>
+    </ion-card>
+    <ion-card routerLink="/buy-products/accessories">
+      <ion-slides loop="true" autoplay="3200" pager>
+        <ion-slide
+          *ngFor="let number of ['https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F104.jpg?alt=media&token=97a6cde6-c9d7-4ddc-b88e-9f66db460a0c','https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F103.jpg?alt=media&token=a4db078c-f274-4547-b3c5-ad02d03947e0']">
+          <img style="height: auto;width: 100%" src="{{number}}" />
+        </ion-slide>
+      </ion-slides>
+      <h4 style="text-align: center; color:#3880ff">اكسسوارات#</h4>
+    </ion-card>
+    <ion-card routerLink="/buy-products/Perfumes">
+      <ion-slides loop="true" autoplay="3300" pager>
+        <ion-slide
+          *ngFor="let number of ['https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F106.jpg?alt=media&token=bec796ea-33ef-4a78-9724-f3c900786c77','https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F105.jpg?alt=media&token=6d493e04-207b-46da-9470-68621d677d02']">
+          <img style="height: auto;width: 100%" src="{{number}}" />
+        </ion-slide>
+      </ion-slides>
+      <h4 style="text-align: center; color:#3880ff">عطور#</h4>
+    </ion-card>
+    <ion-card routerLink="/buy-products/Gifts">
+      <ion-slides loop="true" autoplay="3200" pager>
+        <ion-slide
+          *ngFor="let number of ['https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F108.jpg?alt=media&token=0a0b15c5-d508-4ce0-9203-c5788770edb8','https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F107.jpg?alt=media&token=7bb8d7d3-034c-4681-b008-ab42d7f99f9a']">
+          <img style="height: auto;width: 100%" src="{{number}}" />
+        </ion-slide>
+      </ion-slides>
+      <h4 style="text-align: center; color:#3880ff">تحف وهدايا#</h4>
+    </ion-card>
+    <ion-card routerLink="/buy-products/Stationery">
+      <ion-slides loop="true" autoplay="3100" pager>
+        <ion-slide
+          *ngFor="let number of ['https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F110.jpg?alt=media&token=a3bd053d-56c0-44d1-8d97-7ad9a5aa8191','https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F109.jpg?alt=media&token=67f7e2c5-0f94-4013-a3ea-cd4cefcaf786']">
+          <img style="height: auto;width: 100%" src="{{number}}" />
+        </ion-slide>
+      </ion-slides>
+      <h4 style="text-align: center; color:#3880ff">قرطاسية#</h4>
+    </ion-card>
+    <ion-card (click)="buy('Appliances')" routerLink="/buy-products/Appliances">
+      <ion-slides loop="true" autoplay="3300" pager>
+        <ion-slide
+          *ngFor="let number of ['https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F112.jpg?alt=media&token=90df5ba3-ad73-4505-b9fb-05ea6489b3e3','https://firebasestorage.googleapis.com/v0/b/newagent-49a44.appspot.com/o/slides%2F111.jpg?alt=media&token=be453318-ae09-4fa8-b739-7a48b7784c47']">
+          <img style="height: auto;width: 100%" src="{{number}}" />
+        </ion-slide>
+      </ion-slides>
+      <h4 style="text-align: center; color:#3880ff">اجهزة منزلية#</h4>
+    </ion-card>
+  </div>
+
+</ion-content>

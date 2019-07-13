@@ -1,0 +1,38 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      منتجاتي
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let item of list | async " style="margin-top:10%;">
+    <img [src]="item.payload.val().image" alt="" srcset="">
+    <div class="imagedev" [ngStyle]="{'background-image': 'url(' + item.payload.val().image + ')'}"></div>
+    <ion-card-content style="direction: rtl">
+      <ion-card-title>
+        <h2 style="color: #3880ff">اسم المنتج: <span
+            style="color: black; font-weight: bold">{{item.payload.val().name}}</span>
+        </h2>
+      </ion-card-title>
+      <h2 style="color: #3880ff">التفاصيل: <span
+          style="color: black; font-weight: bold">{{item.payload.val().description}}</span></h2>
+      <h2 style="color: #3880ff">السعر: <span
+          style="color: black; font-weight: bold">{{item.payload.val().price}}$</span>
+      </h2>
+      <h2 style="color: #3880ff">حالة المنتج: <span
+          style="color: black; font-weight: bold">{{item.payload.val().status}}</span></h2>
+    </ion-card-content>
+    <ion-item>
+      <div class="select">
+        <div class="price">
+          <ion-button color="danger" (click)="delete(item.payload.key)">
+            حذف
+          </ion-button>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </div>
+      </div>
+    </ion-item>
+  </ion-card>
+</ion-content>

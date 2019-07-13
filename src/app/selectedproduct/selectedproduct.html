@@ -1,0 +1,64 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      شراء
+    </ion-title>
+    <ion-buttons slot="end" style="padding :8px">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="card">
+    <img class="imagedev" [src]="product?.image" style="width: 100% ; height: 350px;">
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="person" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>اسم المنتج:</p>
+        <h2>{{product?.name}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="clipboard" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>التفاصيل:</p>
+        <h2>{{product?.description}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="card" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>السعر:</p>
+        <h2>{{product?.price}} $</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="product?.status">
+      <ion-icon name="information" slot="end"></ion-icon>
+      <ion-label style="text-align: right">
+        <p>الحاله:</p>
+        <h2>{{product?.status}} </h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="butadd">
+    <ion-button icon-only small (click)="rem()">
+      <ion-icon name="remove"></ion-icon>
+    </ion-button>
+
+    <ion-button icon-only style="font-size: 12px">
+      {{i}}
+    </ion-button>
+
+    <ion-button icon-only small (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button><br>
+    <ion-button style="text-align: center" fill="outline" (click)="buy(product)">
+      <ion-icon name="cart"></ion-icon>
+      شراء
+    </ion-button>
+  </div>
+
+</ion-content>

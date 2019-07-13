@@ -1,0 +1,23 @@
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+  font-family: 'Cairo', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4,spanion-action-sheet,menuitem , ion-action-sheet-controller, ion-alert, ion-alert-controller, ion-anchor, ion-app, ion-avatar, ion-back-button, ion-backdrop, ion-badge, ion-button, ion-buttons, ion-card, ion-card-content, ion-card-header, ion-card-subtitle, ion-card-title, ion-checkbox, ion-chip, ion-col, ion-content, ion-datetime, ion-fab, ion-fab-button, ion-fab-list, ion-footer, ion-grid, ion-header, ion-icon, ion-img, ion-infinite-scroll, ion-infinite-scroll-content, ion-input, ion-item, ion-item-divider, ion-item-group, ion-item-option, ion-item-options, ion-item-sliding, ion-label, ion-list, ion-list-header, ion-loading, ion-loading-controller, ion-menu, ion-menu-button, ion-menu-controller, ion-menu-toggle, ion-modal, ion-modal-controller, ion-nav, ion-nav-pop, ion-nav-push, ion-nav-set-root, ion-note, ion-picker, ion-picker-column, ion-picker-controller, ion-popover, ion-popover-controller, ion-progress-bar, ion-radio, ion-radio-group, ion-range, ion-refresher, ion-refresher-content, ion-reorder, ion-reorder-group, ion-ripple-effect, ion-route, ion-route-redirect, ion-router, ion-router-outlet, ion-row, ion-searchbar, ion-segment, ion-segment-button, ion-select, ion-select-option, ion-select-popover, ion-skeleton-text, ion-slide, ion-slides, ion-spinner, ion-split-pane, ion-tab-bar, ion-tab-button, ion-text, ion-textarea, ion-thumbnail, ion-title, ion-toast, ion-toast-controller, ion-toggle, ion-toolbar, ion-virtual-scroll {
+  font-family: 'Cairo', sans-serif;
+}
+
+.swiper-pagination-bullet {
+    background: rgb(8, 0, 0);
+}
+

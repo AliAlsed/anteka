@@ -1,0 +1,48 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      بيع منتجات
+    </ion-title>
+    <ion-buttons id="notification-button" slot="end" style="padding :8px">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="header-content" id="header-content">
+    <div class="content">
+      <div class="singupview">
+        <img class="imagedev" *ngIf="imagecheck" [src]="imageurl" />
+        <div class="myimage" (click)="takePhoto()" *ngIf="!imagecheck">
+          <div class="myimage-content">
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
+            <p>رفع صورة</p>
+          </div>
+        </div>
+        <ion-list no-lines>
+          <ion-item class="input">
+            <ion-input type="text" placeholder="اسم المنتج" [(ngModel)]="name" required></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input type="number" placeholder=" السعر" [(ngModel)]="price" required></ion-input>
+          </ion-item>
+          <ion-item class="select">
+            <ion-label style="text-align: right" *ngIf="show()">الحاله</ion-label>
+            <ion-select [(ngModel)]="status" placeholder="الحاله" okText="اختيار" cancelText="الغاء">
+              <ion-select-option value="جديدة">جديدة</ion-select-option>
+              <ion-select-option value="مستعمله">مستعمله</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="input">
+            <ion-textarea class="form-control custom-control" rows="3" style="text-align: right" placeholder=" التفاصيل"
+              [(ngModel)]="desc"></ion-textarea>
+          </ion-item>
+          <div class="createbut">
+            <ion-button color="primary" (click)="addfod()">انشاء</ion-button>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

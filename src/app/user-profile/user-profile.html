@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary" style="text-align: right;" >
+    <ion-title id="navtitle" style="font-weight: bold;text-align: center;color: black;"> انشاء صفحه شخصيه  </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="header-content" id="header-content">
+
+    <div class="content">
+        <div class="singupview">
+
+          <img class="imagedev" *ngIf="imagecheck" [src]="imageurl">
+
+
+            <div class="myimage" (click)="takePhoto()" *ngIf="!imagecheck">
+                <div class="myimage-content">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                <p>رفع صورة</p>
+              </div>
+            </div>
+
+    <div class="inputs">
+
+    <!-- singup view-->
+    <style> 
+      input[type="text"]::placeholder {  
+          text-align: center;
+          color:rgb(211, 211, 211);
+      }
+      input[type="password"]::placeholder {  
+          text-align: center;
+          color:rgb(211, 211, 211);
+      } 
+      input[type="number"]::placeholder {  
+          text-align: center;
+          color:rgb(211, 211, 211);
+      } 
+  </style>
+
+        <div class="email">
+          <input type="text" placeholder="الاسم" [(ngModel)]="name" required>
+        </div>
+
+
+
+        <div class="pass">
+          <input type="text" placeholder="العنوان" [(ngModel)]="address" required>
+        </div>
+
+
+        <div class="pass">
+            <input type="number" placeholder="رقم الهاتف" [(ngModel)]="phone" required>
+          </div>
+          <br>
+        <div class="logbut">
+          <button ion-button color="secondary" outline (click)="addfod(name,address,phone)" >انشاء</button>
+        </div>
+    </div>
+
+
+    </div>
+
+    </div>
+
+    </div>
+</ion-content>

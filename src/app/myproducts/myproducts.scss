@@ -1,0 +1,67 @@
+
+ .toolbar-title-md {
+    direction: rtl !important;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+ .toolbar-title-md p{
+margin: 0 5px;
+display: inline-block;
+}
+
+ .panel {
+    position: fixed;
+    left: 5px;
+
+}
+
+ .panel ion-icon {
+   margin-right: 10px;
+   display: inline-block;
+}
+
+
+ .card-md {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+
+   }
+
+
+    .select {
+       display: flex;
+   }
+
+    .select > div {
+       width: 100%;
+   }
+
+    .select .price {
+       color: #FF4136;
+       direction: ltr;
+        text-align: right;
+   }
+
+    .select .get {
+       color: #fffa65;
+       direction: ltr;
+   }
+
+    .card-title-md{
+       display: flex;
+       align-items: center;
+   }
+
+    .card-title-md h3 {
+       width: 100%;
+       font-size: 18px;
+       color: #000;
+   }
+
+    .card-title-md p {
+       width: 100%;
+       text-align: left;
+       font-size: 11px;
+   }

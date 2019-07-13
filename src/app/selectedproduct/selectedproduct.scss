@@ -1,0 +1,19 @@
+
+    .butadd{
+        text-align: center;
+
+    }
+    .imagedev{
+      transition:all 0.1s ease-in-out;
+
+    }
+    .imagedev:hover{
+      transform: scale(1.1);
+    }
+    .imagedev:focus{
+      transform: scale(1.1);
+    }
+
+    p {
+  color: #3880ff !important;
+}

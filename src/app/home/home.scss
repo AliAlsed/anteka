@@ -1,0 +1,50 @@
+
+.toolbar-title-md {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #424242;
+}
+#notification-button {
+  position: relative;
+  top:1px;
+  margin: 5px;
+  color: #fff;
+  right: 1px;
+  overflow: visible!important;
+}
+
+
+#notifications-badge {
+  background-color: red;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  border-radius: 100%;
+}
+.card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      font: 1em sans-serif;
+      color: #fff;
+    }
+
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+
+
+  }

@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="fther"></div>
+
+  <div class="register" padding>
+    <div style="text-align: center">
+      <h2 style="font-size: 30px">سجل
+        <span>الان</span>
+      </h2>
+      <p>وارفع بضاعتك</p>
+    </div>
+    <ion-list>
+      <ion-item>
+        <input type="text" placeholder="الاسم الكامل" [(ngModel)]="name">
+      </ion-item>
+      <ion-item>
+        <input type="email" placeholder="البريد الالكتروني" [(ngModel)]="emailreg">
+      </ion-item>
+
+      <ion-item>
+        <input type="password" placeholder="كلمة المرور" [(ngModel)]="passreg">
+      </ion-item>
+      <ion-item>
+        <div class="logbut" style="text-align: center;width: 100%;">
+          <div>
+            <button (click)="register(email,pass)">انشاء الحساب</button>
+          </div>
+          <p (click)="showLogin()">
+            <span>تسجيل الدخول؟</span>
+          </p>
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+  <div class="login" padding>
+    <div style="text-align: center">
+      <h2 style="font-size: 30px">مرحبا
+        <span>بك</span>
+      </h2>
+      <p>قم بلدخول الى حسابك</p>
+    </div>
+    <ion-list>
+      <ion-item>
+        <input type="email" placeholder="البريد الالكتروني" #email>
+      </ion-item>
+      <ion-item>
+        <input type="password" placeholder="كلمة المرور" #pass>
+      </ion-item>
+      <ion-item>
+        <div class="logbut" style="text-align: center;width: 100%;">
+          <button (click)="login(email.value,pass.value)">دخول</button>
+          <p (click)="showRegister()">
+            <span>انشاء حساب جديد</span>
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

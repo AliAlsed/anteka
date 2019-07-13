@@ -1,0 +1,36 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title id="navtitle">
+      مشترياتي
+    </ion-title>
+    <ion-buttons id="notification-button" slot="end" style="padding :8px">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="items.length >= 1">
+    <ion-list>
+      <ion-item *ngFor="let item of items" style="margin-top:15px; direction: rtl">
+        <ion-thumbnail item-left>
+          <img style="border-radius: 100%;" [src]="item.image">
+        </ion-thumbnail>
+        <h4 style="padding:5px">{{item.name}}</h4>
+        <h4 style="padding:5px;color: #3880ff; font-weight: bold">السعر: {{item.price * item.count}}$</h4>
+      </ion-item>
+    </ion-list>
+    <div style="text-align: center">
+      <ion-label style="text-align: center;font-size:20px;"> <b>$ الكلي: {{total}} </b></ion-label><br><br><br>
+      <ion-button block (click)=clear()>تم ايصال البضاعه</ion-button>
+
+    </div>
+  </div>
+
+  <div *ngIf="items.length <= 0" style="text-align: center">
+    <img style="width: 150px; height: 150px; margin-top:45px;" src="../../assets/imgs/empt.png" />
+    <h1 style="font-size: 20px;text-align: center"><b> لم تقم باضافة اي بضاعة الى العربه</b>
+    </h1>
+  </div>
+
+</ion-content>

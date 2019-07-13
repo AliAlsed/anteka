@@ -1,0 +1,7 @@
+{
+  "name": "ecomm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

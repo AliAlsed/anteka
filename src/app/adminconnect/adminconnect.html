@@ -1,0 +1,18 @@
+<ion-header style="direction: rtl">
+  <ion-toolbar color="primary">
+    <ion-title>
+      مراسلة الادمن
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item (click)="chatme(filteredusers)">
+      <ion-avatar item-left>
+        <img src="{{filteredusers?.image}}">
+      </ion-avatar>
+      <h3 style="padding: 5px" (click)="chatme(filteredusers)"> {{filteredusers?.name}} </h3>
+    </ion-item>
+  </ion-list>
+</ion-content>
