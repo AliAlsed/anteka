@@ -35,7 +35,8 @@ const routes: Routes = [
     canActivate: [AuthGuard] 
   },
   { path: 'tabs', loadChildren: './shopping-tabs/shopping-tabs.module#ShoppingTabsPageModule',canActivate: [AuthGuard]  },
-  { path: 'user-profile', loadChildren: './user-profile/user-profile.module#UserProfilePageModule',canActivate: [AuthGuard]  },
+  { path: 'user-profile', loadChildren: './user-profile/user-profile.module#UserProfilePageModule',canActivate: [AuthGuard]  },  { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsPageModule' },
+
 ];
 
 @NgModule({

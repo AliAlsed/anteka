@@ -54,6 +54,16 @@ const routes: Routes = [
               ]
           },
           {
+            path: 'contact',
+            children:
+              [
+                {
+                  path: '',
+                  loadChildren: '../contact-us/contact-us.module#ContactUsPageModule'
+                }
+              ]
+          },
+          {
             path: 'my-products',
             children:
               [
