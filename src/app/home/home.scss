@@ -21,30 +21,25 @@
   right: -3px;
   border-radius: 100%;
 }
-.card-background-page {
 
-    ion-card {
-      position: relative;
-      text-align: center;
-    }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
 
-    .card-title {
-      position: absolute;
-      top: 36%;
-      font-size: 2.0em;
-      width: 100%;
-      font-weight: bold;
-      font: 1em sans-serif;
-      color: #fff;
-    }
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color:#000;
+  font-size: 20px;
+}
 
-    .card-subtitle {
-      font-size: 1.0em;
-      position: absolute;
-      top: 52%;
-      width: 100%;
-      color: #fff;
-    }
+img {
+    border-radius: 5px;
+    border: solid 1px #3880ff;
+}
 
-
-  }

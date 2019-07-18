@@ -1,24 +1,18 @@
-import { Component, NgZone, ViewChild } from '@angular/core';
-import { NavController, NavParams, Events, LoadingController, AlertController, Platform } from '@ionic/angular';
+import { Component, NgZone, ViewChild, OnInit } from '@angular/core';
+import { NavController, Events, LoadingController, AlertController, Platform, IonContent } from '@ionic/angular';
 import * as firebase from 'firebase/app';
 import { ChatProvider } from '.././services/chat/chat';
 import { ImghandlerProvider } from '.././services/imghandler/imghandler';
 import { AngularFireDatabase } from '@angular/fire/database';
-
-/**
- * Generated class for the ChatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'chat',
   templateUrl: './chat.html',
   styleUrls: ['./chat.scss'],
 })
-export class ChatPage {
-  //@ViewChild('content') content: Content;
+export class ChatPage implements OnInit {
+
+  @ViewChild(IonContent) content: IonContent;
   buddy: any;
   newmessage;
   key: any;
@@ -29,7 +23,6 @@ export class ChatPage {
   imgornot;
   show = false;
   constructor(public navCtrl: NavController,
-    public navParams: NavParams,
     public chatservice: ChatProvider,
     public events: Events,
     public zone: NgZone,
@@ -53,10 +46,17 @@ export class ChatPage {
               this.imgornot.push(false);
           }
         })
-
-
       })
     }
+  }
+
+  ngOnInit() {
+    this.db.list(`users/${firebase.auth().currentUser.uid}`).valueChanges().subscribe((data) => {
+      if (data[0]) {
+        this.photoURL = data[2].toString();
+      }
+    }, (err) => {
+    });
   }
 
   addmessage() {
@@ -93,15 +93,5 @@ export class ChatPage {
       loader.dismiss();
     })
 
-  }
-
-
-  ionViewDidLoad() {
-    this.db.list(`users/${firebase.auth().currentUser.uid}`).valueChanges().subscribe((data) => {
-      if (data[0]) {
-        this.photoURL = data[2].toString();
-      }
-    }, (err) => {
-    });
   }
 }

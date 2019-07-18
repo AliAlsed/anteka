@@ -28,6 +28,7 @@ export class UserProfilePage implements OnInit {
   loading;
   currentPhoto;
   imgSource;
+  imgBlob;
 
   constructor(public navCtrl: Router,
 
@@ -58,7 +59,7 @@ export class UserProfilePage implements OnInit {
 
     });
   }
-  takePhoto() {
+  async takePhoto() {
     const options: CameraOptions = {
       targetHeight: 720,
       targetWidth: 720,
@@ -68,20 +69,19 @@ export class UserProfilePage implements OnInit {
       mediaType: this.camera.MediaType.PICTURE,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
     }
-    this.camera.getPicture(options).then((imageData) => {
-      this.loading = this.load.create({
-        message: "جاري اضافة الصورة ",
-        cssClass: "setdire"
-      });
-      this.loading.present();
-      this.mySelectedPhoto = this.dataURLtoBlob('data:image/jpeg;base64,' + imageData);
-      this.upload();
-
-    }, (err) => {
-      alert(JSON.stringify(err));
-    });
-
-
+    await this.camera.getPicture(options).then(
+      imageData => {
+        this.showloading();
+        this.imgBlob = imageData;
+      },
+      err => {
+        alert(JSON.stringify(err));
+      }
+    );
+    this.mySelectedPhoto = await this.dataURLtoBlob(
+      "data:image/jpeg;base64," + this.imgBlob
+    );
+    await this.upload();
   }
 
   dataURLtoBlob(myURL) {
@@ -136,6 +136,13 @@ export class UserProfilePage implements OnInit {
       cssClass: "setdire"
     });
     toast.present();
+  }
+  async showloading() {
+    this.loading = await this.load.create({
+      message: "جاري اضافة الصورة",
+      cssClass: "loaddire"
+    });
+    await this.loading.present();
   }
 
 }

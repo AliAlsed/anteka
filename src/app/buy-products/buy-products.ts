@@ -85,7 +85,7 @@ export class BuyProductsPage implements OnInit {
     };
     await this.camera.getPicture(options).then(
       imageData => {
-        console.log("GOT THEM: " + imageData);
+        console.log("GOT THEM:" + imageData);
         this.showloading();
         this.imgBlob = imageData;
       },

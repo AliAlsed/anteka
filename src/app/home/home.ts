@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
     private storage: Storage,
     private _ExtrasService: ExtrasService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.storage.get("id").then(userid => {
       this.db
         .list(`cart/${userid}`)
