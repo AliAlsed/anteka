@@ -21,3 +21,13 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4,spanion-action-sheet,menuitem ,
     background: rgb(8, 0, 0);
 }
 
+hr {
+  height: 1px !important;
+  width: 100% !important;
+  background: #ccc !important;
+  display: block !important;
+  font-size: 1em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+

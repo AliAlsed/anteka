@@ -9,27 +9,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content no-padding>
-  <ion-card *ngFor="let item of list | async ">
-    <img class="imagedev" [src]="item.payload.val().image" style="width: 100% ; height: 250px;">
-    <ion-card-content style="direction: rtl">
-      <ion-card-title>
-        <h2 style="color: #3880ff">اسم المنتج: <span
-            style="color: black; font-weight: bold">{{item.payload.val().name}}</span>
-        </h2>
-      </ion-card-title>
-      <h2 style="color: #3880ff">التفاصيل: <span
-          style="color: black; font-weight: bold">{{item.payload.val().description}}</span></h2>
-      <h2 style="color: #3880ff">السعر: <span
-          style="color: black; font-weight: bold">{{item.payload.val().price}}$</span></h2>
-      <h2 style="color: #3880ff">حالة المنتج: <span
-          style="color: black; font-weight: bold">{{item.payload.val().status}}</span></h2>
-    </ion-card-content>
-    <div style="text-align: center; margin:10px">
-      <ion-button icon-start clear item-center (click)="buy(item.payload.val())">
-        <ion-icon name="cart"></ion-icon>
-        شراء
-      </ion-button>
-    </div>
-  </ion-card>
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let item of list | async">
+      <ion-col>
+        <img class="imagedev" [src]="item.payload.val().image" style="width: 140px ; height: 140px;">
+        <p style="color: #000">السعر: <span style="color: #3880ff">${{item.payload.val().price}}</span></p>
+      </ion-col>
+      <ion-col>
+        <h6 style="text-align: center">{{item.payload.val().name}}</h6>
+        <p style=" font-size: 12px; text-align: right">{{item.payload.val().description}}</p>
+        <p style="text-align: center" style="color: #000">حالة المنتج: <span
+            style="color: #3880ff">{{item.payload.val().status}}</span></p>
+        <div style="text-align: center">
+          <ion-button (click)="buy(item.payload.val())">
+            <ion-icon name="cart"></ion-icon>شراء
+          </ion-button>
+        </div>
+      </ion-col>
+      <hr>
+    </ion-row>
+  </ion-grid>
 </ion-content>

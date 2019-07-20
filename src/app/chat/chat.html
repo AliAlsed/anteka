@@ -10,27 +10,37 @@
 </ion-header>
 
 
-<ion-content #content>
-  <div class="chatwindow">
-    <ion-list no-lines>
-      <ion-item *ngFor="let item of allmessages; let i = index" text-wrap>
-        <ion-avatar item-left *ngIf="item.sentby === buddy.uid">
-          <img src="{{buddy.image}}">
-        </ion-avatar>
-        <div style="padding: 5px;" class="bubble me" *ngIf="item.sentby === buddy.uid">
-          <h3 *ngIf="!imgornot[i]" style="color:rgb(0, 0, 0)">{{item.message}}</h3>
-          <img src="{{item.message}}" *ngIf="imgornot[i]">
+<ion-content #content padding class="contentBg"  id="chat-parent" overflow-scroll="true">
+  <div>
+    <div id="chat-container">
+      <span class="line-style"></span>
+      <hr>
+      <div class="message-wrap">
+        <div *ngFor="let item of allmessages;let i = index; let first = first; let last = last" class="message">
+
+          <div class="message-left" *ngIf="item.sentby == buddy.uid">
+            <img class="user-img" [src]="buddy.image">
+            <div class="msg-detail">
+              <div class="msg-content">
+                <p class="line-breaker " *ngIf="!imgornot[i]" >{{item.message}}</p>
+                <img src="{{item.message}}" *ngIf="imgornot[i]">
+              </div>
+            </div>
+          </div>
+          <div class="message-right" *ngIf="item.sentby != buddy.uid">
+          <img class="user-img" [src]="photoURL">
+            <div class="msg-detail">
+              <div class="msg-info">
+              </div>
+              <div class="msg-content">
+                <p class="line-breaker  ">{{item.message}}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <ion-avatar item-right *ngIf="item.sentby != buddy.uid">
-          <img src="{{photoURL}}">
-        </ion-avatar>
-        <div style="padding: 5px" class="bubble you" *ngIf="item.sentby != buddy.uid">
-          <h3 *ngIf="!imgornot[i]" style="color:rgb(0, 0, 0)">{{item.message}}</h3>
-          <img src="{{item.message}}" *ngIf="imgornot[i]">
-        </div>
-      </ion-item>
-    </ion-list>
-  </div>
+      </div>
+    </div>
+    </div>
 </ion-content>
 <ion-footer ion-fixed>
   <ion-grid>
@@ -40,7 +50,7 @@
         </ion-input>
       </ion-col>
       <ion-col>
-        <ion-button size="small" shape="round" (click)="addmessage()">
+        <ion-button size="small" shape="round"  (click)="addmessage()">
           <ion-icon slot="icon-only" name="send"></ion-icon>
         </ion-button>
       </ion-col>

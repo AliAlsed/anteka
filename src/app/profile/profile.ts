@@ -19,9 +19,7 @@ export class ProfilePage implements OnInit {
   loading;
   list;
   constructor(private storage: Storage,
-    private db: AngularFireDatabase, private af: AngularFireAuth
-    , public load: LoadingController
-  ) {
+    private db: AngularFireDatabase, private af: AngularFireAuth, public load: LoadingController) {
     this.list = db.list("fods").snapshotChanges();
   }
 
@@ -35,9 +33,7 @@ export class ProfilePage implements OnInit {
           this.user.image = data[2].toString();
           this.user.phone = data[4].toString();
         }
-      }, (err) => {
       });
-
     })
   }
 
