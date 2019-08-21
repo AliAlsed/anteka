@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ExtrasService } from './extras.service';
 import { File } from '@ionic-native/file/ngx';
+import {Keyboard} from '@ionic-native/keyboard/ngx';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { File } from '@ionic-native/file/ngx';
     File,
     Camera,
     AngularFireAuth,
+    Keyboard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: FirestoreSettingsToken, useValue: {} },
     SplashScreen,
