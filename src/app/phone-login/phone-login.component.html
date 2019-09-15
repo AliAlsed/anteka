@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar style="color:#3498db;">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()"> <ion-icon slot="icon-only" name="close"></ion-icon> </ion-button>
+    </ion-buttons>
+    <ion-title>  التسجيل هن طريق رقم الهاتف   </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="signin">
+    <div class="main">
+      <form role="form" #f="ngForm">
+        <div *ngIf="!check">
+          <ion-item>
+            <ion-input class="form-control" placeholder="رقم الهاتف" type="tel" name="phone" [(ngModel)]="phone"
+              required minlength="1">
+            </ion-input>
+          </ion-item>
+          <ion-button expand="block" fill="outline" type="buttom" color="danger" (click)="sendcode()"
+            [disabled]="!f.valid">
+            ارسال رمز التحقيق</ion-button>
+        </div>
+      </form>
+
+      <div *ngIf="check">
+        <form role="form" #f="ngForm">
+          <ion-item>
+            <ion-input class="form-control" placeholder="يرجى ادخال رمز التحقيق" name="code"
+              [(ngModel)]="verificationCode" required minlength="6">
+            </ion-input>
+          </ion-item>
+          <ion-button expand="block" fill="outline" (click)="verifyLoginCode()" color="danger" type="buttom"
+            [disabled]="!f.valid">
+            تالتسجيل هن طريق رقم الهاتف</ion-button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div id="recaptcha-container"></div>
+  </ion-toolbar>
+</ion-footer>

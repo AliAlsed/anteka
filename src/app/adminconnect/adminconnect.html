@@ -9,10 +9,10 @@
 <ion-content padding>
   <ion-list no-lines>
     <ion-item (click)="chatme(filteredusers)">
-      <ion-avatar item-left>
+      <ion-avatar slot="end">
         <img src="{{filteredusers?.image}}">
       </ion-avatar>
-      <h3 style="padding: 5px" (click)="chatme(filteredusers)"> {{filteredusers?.name}} </h3>
+      <ion-label style="padding: 5px; text-align: right" (click)="chatme(filteredusers)"> {{filteredusers?.name}} </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

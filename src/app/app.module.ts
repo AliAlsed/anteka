@@ -22,10 +22,13 @@ import { FormsModule } from '@angular/forms';
 import { ExtrasService } from './extras.service';
 import { File } from '@ionic-native/file/ngx';
 import {Keyboard} from '@ionic-native/keyboard/ngx';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { PhoneLoginComponent } from './phone-login/phone-login.component';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,ImageViewerComponent,PhoneLoginComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
@@ -36,7 +39,7 @@ import {Keyboard} from '@ionic-native/keyboard/ngx';
     AppRoutingModule,
     FormsModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent,ImageViewerComponent,PhoneLoginComponent],
   providers: [
     StatusBar,
     File,
@@ -52,7 +55,8 @@ import {Keyboard} from '@ionic-native/keyboard/ngx';
     RequestProvider,
     ChatProvider,
     ImghandlerProvider,
-    ExtrasService
+    ExtrasService,
+    FirebaseAuthentication
 
   ]
 })

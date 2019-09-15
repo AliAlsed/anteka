@@ -9,25 +9,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content >
   <ion-grid>
-    <ion-row *ngFor="let item of list | async">
-      <ion-col>
-        <img class="imagedev" [src]="item.payload.val().image" style="width: 140px ; height: 140px;">
-        <p style="color: #000">السعر: <span style="color: #3880ff">${{item.payload.val().price}}</span></p>
-      </ion-col>
-      <ion-col>
-        <h6 style="text-align: center">{{item.payload.val().name}}</h6>
-        <p style=" font-size: 12px; text-align: right">{{item.payload.val().description}}</p>
-        <p style="text-align: center" style="color: #000">حالة المنتج: <span
-            style="color: #3880ff">{{item.payload.val().status}}</span></p>
+    <ion-row >
+      <ion-col size = "6" *ngFor="let item of list | async">
+          <ion-card  style=" overflow: visible;" >
+
+          <ion-item-divider>
+        <img class="imagedev" [src]="item.payload.val().image" 
+        style="width: 100vw ; height: 100px; margin-left: -10px;"
+        
+        (click)="presentImage(item.payload.val().image)">
+      </ion-item-divider>
+
+
+
+        <div style="text-align: right; margin: 10px;">
+            <p style="color: #3880ff; text-align: right; padding: 3px;">   {{item.payload.val().name}} </p>
+            <p style="text-align: right">  {{item.payload.val().name}} </p>
+            <p style="text-align: right;"> {{item.payload.val().description}} </p>
+            <p style="text-align: right; color: #3880ff"> {{item.payload.val().status}} </p> 
+        </div>
+
         <div style="text-align: center">
           <ion-button (click)="buy(item.payload.val())">
             <ion-icon name="cart"></ion-icon>شراء
           </ion-button>
         </div>
+        </ion-card>
       </ion-col>
-      <hr>
     </ion-row>
   </ion-grid>
 </ion-content>

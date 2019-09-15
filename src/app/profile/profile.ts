@@ -23,8 +23,8 @@ export class ProfilePage implements OnInit {
     this.list = db.list("fods").snapshotChanges();
   }
 
-  ngOnInit() {
-    this.storage.get('id').then((userid) => {
+  async ngOnInit() {
+    await this.storage.get('id').then((userid) => {
       this.db.list(`users/${userid}`).valueChanges().subscribe((data) => {
         if (data[0]) {
           this.user.address = data[0].toString();
@@ -37,10 +37,10 @@ export class ProfilePage implements OnInit {
     })
   }
 
-  logout() {
-    this.af.auth.signOut().then(async () => {
-      this.storage.set('id', null);
-      this.storage.set('isloggedin', false);
+  async logout() {
+    await this.af.auth.signOut().then(async () => {
+      await this.storage.set('id', null);
+      await  this.storage.set('isloggedin', false);
       this.loading = await this.load.create({
         message: "جاري تسجيل خروج ",
         cssClass: "dirion"

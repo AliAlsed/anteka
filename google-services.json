@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1082400392398",
+    "firebase_url": "https://newagent-49a44.firebaseio.com",
+    "project_id": "newagent-49a44",
+    "storage_bucket": "newagent-49a44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082400392398:android:51dc3d19552402d4",
+        "android_client_info": {
+          "package_name": "com.ionic.anteka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082400392398-vdka8iqke7svva99pdulpnvidcp9r84d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionic.anteka",
+            "certificate_hash": "6c8cce7e70442e3cbb964fd4902f110fae47d3df"
+          }
+        },
+        {
+          "client_id": "1082400392398-87att3vedi8peagddvqn6883j5e7c965.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQP7qVMcXLTJ7sLB3PucoLsjq3pk0scLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082400392398-87att3vedi8peagddvqn6883j5e7c965.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

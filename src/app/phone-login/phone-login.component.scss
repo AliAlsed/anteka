@@ -1,0 +1,30 @@
+ion-title,
+ion-content {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.header {
+    text-align: center
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+ion-input {
+    font-family: 'Cairo', sans-serif;
+}

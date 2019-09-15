@@ -13,6 +13,9 @@
         <input type="text" placeholder="الاسم الكامل" [(ngModel)]="name">
       </ion-item>
       <ion-item>
+          <input type="text" placeholder="رقم الهاتف" [(ngModel)]="phone">
+        </ion-item>
+      <ion-item>
         <input type="email" placeholder="البريد الالكتروني" [(ngModel)]="emailreg">
       </ion-item>
 
@@ -22,17 +25,21 @@
       <ion-item>
         <div class="logbut" style="text-align: center;width: 100%;">
           <div>
-            <button (click)="register(email,pass)">انشاء الحساب</button>
+            <button (click)="register(email,pass,phone)" [disabled]="phone.length < 10 && name.length < 3">انشاء الحساب</button>
           </div>
           <p (click)="showLogin()">
             <span>تسجيل الدخول؟</span>
+            
           </p>
         </div>
+        
       </ion-item>
 
     </ion-list>
 
   </div>
+
+
   <div class="login" padding>
     <div style="text-align: center">
       <h2 style="font-size: 30px">مرحبا
@@ -50,6 +57,9 @@
       <ion-item>
         <div class="logbut" style="text-align: center;width: 100%;">
           <button (click)="login(email.value,pass.value)">دخول</button>
+
+         
+          
           <p (click)="showRegister()">
             <span>انشاء حساب جديد</span>
           </p>
@@ -57,4 +67,13 @@
       </ion-item>
     </ion-list>
   </div>
+
+  <div  style="text-align: center;width: 100%;">
+  <p style="color: #3498db; text-align: center;"(click)="showPhoneLogin()">
+      الدخول عن طريق رقم الهاتف
+  </p>
+  </div>
+  
 </ion-content>
+        
+

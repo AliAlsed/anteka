@@ -42,14 +42,14 @@ export class UserProfilePage implements OnInit {
     console.log(navh);
   }
 
-  addfod(name: any, address: any, phone: any) {
-    this.af.addUser(name, address, phone, this.imageurl).then((userProfile) => {
+  addfod(name: any, address: any) {
+    this.af.addUser(name, address, this.imageurl).then((userProfile) => {
       this.user = {
         name: name,
         address: address,
+        phone: firebase.auth().currentUser.phoneNumber,
         email: firebase.auth().currentUser.email,
         image: this.imageurl,
-        phone: phone
       }
       // this.presentToast("تم انشاء حسابك بنجاح ");
       //this.navCtrl.popToRoot();

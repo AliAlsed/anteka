@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController } from '@ionic/angular';
+import {
+  NavController, LoadingController,
+  ToastController, ModalController
+} from '@ionic/angular';
 import { AngularFireDatabase } from '@angular/fire/database';
 import $ from "jquery";
 import { AuthProvider } from '.././services/auth/auth';
 import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+
+import { PhoneLoginComponent } from '../phone-login/phone-login.component';
+import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'auth',
@@ -17,18 +24,21 @@ export class AuthPage {
   name = "";
   emailreg = "";
   passreg = "";
+  phone = "";
   userId;
   fireUser = firebase.database().ref(`users`);
   constructor(public navCtrl: NavController,
-    public db: AngularFireDatabase,
-    public auth: AuthProvider,
-    private router: Router,
-    public storage: Storage,
-    public load: LoadingController,
-    public toast: ToastController) {
+              public db: AngularFireDatabase,
+              public auth: AuthProvider,
+              private router: Router,
+              public storage: Storage,
+              public load: LoadingController,
+              public toast: ToastController,
+              public modal: ModalController
+  ) {
   }
 
-  async register(email, pass) {
+  async register(email, pass, phone) {
     var load = await this.load.create({
       message: "جاري انشاء الحساب",
       cssClass: "loaddire"
@@ -37,34 +47,35 @@ export class AuthPage {
     if (this.emailreg.replace(/\s/g, "") != "" && this.passreg.replace(/\s/g, "") != "") {
 
       load.present();
-
-      this.auth.register(this.emailreg, this.passreg).then((user) => {
-        let userId = firebase.auth().currentUser.uid;
-        if (userId != null) {
-          this.storage.set('id', userId);
-          this.storage.set('isloggedin', true);
-        } else {
-        }
-
+      this.auth.register(this.emailreg, this.passreg, this.phone).then((user: any) => {
+        this.auth.addPhone(phone);
+        this.storage.set('isloggedin', true);
         this.router.navigate(['/user-profile']);
         load.dismiss();
 
       }, (e) => {
         console.log(e);
+        if (e.message == "The email address is already in use by another account.") {
+          this.presentToast("هذا الحساب مستخدم مسبقا");
+        } else if (e.message == "A network error (such as timeout, interrupted connection or unreachable host) has occurred.") {
+          this.presentToast("يرجى التحقق من الاتصال بلشبكة");
+        }
         load.dismiss();
       }).catch(() => {
         load.dismiss();
       });
 
     } else {
-      console.log(email + ' ' + pass);
+      console.log(email + ' ' + pass + '' + phone);
     }
     console.log(this.emailreg + ' ' + this.passreg);
   }
 
+
   showLogin() {
     $(".register").slideUp();
     $(".login").slideDown();
+
   }
 
   async login(email, pass) {
@@ -111,6 +122,8 @@ export class AuthPage {
     }
   }
 
+
+
   showRegister() {
     $(".login").slideUp();
     $(".register").slideDown();
@@ -124,6 +137,30 @@ export class AuthPage {
     });
     toast.present();
   }
+
+
+
+  async showPhoneLogin() {
+    const modal = await this.modal.create({
+      component: PhoneLoginComponent,
+      componentProps: {
+
+        imgTitle: "phoneNumber",
+        imgDescription: "passCode",
+      },
+
+    });
+
+    return await modal.present();
+
+  }
+
+
+
+
+
+
+
 }
 
 

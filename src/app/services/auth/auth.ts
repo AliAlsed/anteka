@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import { User } from '../model/user'
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Storage } from '@ionic/storage';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
 export class AuthProvider {
@@ -17,23 +18,51 @@ export class AuthProvider {
     public db: AngularFireDatabase,
     public storage: Storage) {
   }
+
   login(email: string, password: string): Promise<any> {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
-  async register(email: string, pass: string) {
-    return await this.afAuth.auth.createUserWithEmailAndPassword(email, pass).then((userData) => {
-      console.log(userData);
+
+  async register(email: string, pass: string,phone:string) {
+    return await this.afAuth.auth.
+    createUserWithEmailAndPassword(email, pass).then((userData) => {
+      this.addPhone(phone);
+      this.storage.set('id', userData.user.uid);
     }
-    )
+    );
   }
-  async addUser(name, address, phone, imageurl) {
+
+
+  // phoneLogin(phone: string, passCode: firebase.auth.ApplicationVerifier): Promise<any> {
+  //   return firebase.auth().signInWithPhoneNumber(phone,passCode);
+  // }
+  
+
+
+
+
+
+
+  async addPhone(phone) {
+    
+    localStorage.setItem("Phone",phone);
+    firebase.auth().currentUser.phoneNumber = phone;
+   
+  }
+
+
+
+
+
+
+  async addUser(name, address, imageurl) {
     if (imageurl.length < 1) {
       imageurl = 'https://www.shareicon.net/data/512x512/2016/05/29/772558_user_512x512.png';
     }
     return await this.db.object(`users/${firebase.auth().currentUser.uid}`).set({
       name: name,
       address: address,
-      phone: phone,
+      phone: localStorage.getItem("Phone"),
       email: firebase.auth().currentUser.email,
       image: imageurl,
       uid: firebase.auth().currentUser.uid

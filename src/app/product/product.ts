@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ImageViewerComponent } from './../image-viewer/image-viewer.component';
+import { async } from 'q';
+
 
 @Component({
   selector: 'page-product',
@@ -24,6 +28,7 @@ export class ProductPage implements OnInit {
     public db: AngularFireDatabase,
     private route: ActivatedRoute,
     public router: Router,
+    public modal : ModalController
   ) { }
 
   object = {
@@ -54,5 +59,24 @@ export class ProductPage implements OnInit {
         },
       });
   }
+
+  async presentImage(myImage) {
+    const modal = await this.modal.create({
+      component: ImageViewerComponent,
+      componentProps: {
+        imgSource: myImage,
+        imgTitle: "",
+        imgDescription: ""
+      },
+      cssClass: 'modal-fullscreen',
+      keyboardClose: true,
+      showBackdrop: true
+    });
+
+    return await modal.present();
+  
+  }
+
+
 
 }
